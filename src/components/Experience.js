@@ -123,9 +123,9 @@ export default function Experience({ color }) {
       "Data Collection":
         "https://drive.google.com/drive/u/0/folders/1y9-2tsFHxdCwo-TCHN1tXe_amSk7tGu8",
       Preprocessing:
-        "https://drive.google.com/drive/u/0/folders/1y9-2tsFHxdCwo-TCHN1tXe_amSk7tGu8",
+        "https://docs.google.com/spreadsheets/d/1KVlCvt_JlqYjNnKcomNbHiLXg6qq7EMVSlDdBrPYQfs/edit?usp=sharing",
       Exploration: "https://p5ychopomp.github.io/authentica/exploration.html",
-      "Stat Modelling": "#",
+      "Stat Modelling": "https://drive.google.com/file/d/11NnUUDGUplNl6J6wgcWQqnbgIfaXsOZf/view?usp=sharing",
       "Data Modelling": "https://authentica.w3spaces.com/index.html",
     },
     methods: {
