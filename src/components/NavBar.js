@@ -38,7 +38,7 @@ export default function Nav({ color }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const [isLargerThanMD] = useMediaQuery("(min-width: 48em)");
+  const [isLargerThanMD] = useMediaQuery("(min-width: 60em)");
   const scrollToHero = () => {
     const heroSection = document.querySelector("#hero");
     heroSection.scrollIntoView({ behavior: "smooth" });
@@ -101,16 +101,19 @@ export default function Nav({ color }) {
             {isLargerThanMD ? (
               <>
                 <Button variant="ghost" onClick={scrollToAbout}>
-                  About
+                  Introduction
                 </Button>
                 <Button variant="ghost" onClick={scrollToExperience}>
-                  Experience
+                  Methods
                 </Button>
                 <Button variant="ghost" onClick={scrollToProjects}>
-                  Projects
+                  Results
                 </Button>
                 <Button variant="ghost" onClick={scrollToContact}>
-                  Contact
+                  Implications
+                </Button>
+                <Button variant="ghost" onClick={scrollToContact}>
+                  Conclusion
                 </Button>
               </>
             ) : (
