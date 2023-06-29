@@ -51,6 +51,10 @@ export default function Nav({ color }) {
     const experienceSection = document.querySelector("#experience");
     experienceSection.scrollIntoView({ behavior: "smooth" });
   };
+  const scrollToMethods = () => {
+    const experienceSection = document.querySelector("#methods");
+    experienceSection.scrollIntoView({ behavior: "smooth" });
+  };
   const scrollToProjects = () => {
     const projectsSection = document.querySelector("#projects");
     projectsSection.scrollIntoView({ behavior: "smooth" });
@@ -103,17 +107,17 @@ export default function Nav({ color }) {
                 <Button variant="ghost" onClick={scrollToAbout}>
                   Introduction
                 </Button>
-                <Button variant="ghost" onClick={scrollToExperience}>
+                <Button variant="ghost" onClick={scrollToMethods}>
                   Methods
                 </Button>
-                <Button variant="ghost" onClick={scrollToProjects}>
+                <Button variant="ghost" onClick={scrollToExperience}>
                   Results
                 </Button>
-                <Button variant="ghost" onClick={scrollToContact}>
+                <Button variant="ghost" onClick={scrollToProjects}>
                   Implications
                 </Button>
                 <Button variant="ghost" onClick={scrollToContact}>
-                  Conclusion
+                  Contact
                 </Button>
               </>
             ) : (
@@ -137,13 +141,16 @@ export default function Nav({ color }) {
                   <DrawerContent>
                     <DrawerBody>
                       <Button variant="ghost" onClick={scrollToAbout}>
-                        About
+                        Introduction
+                      </Button>
+                      <Button variant="ghost" onClick={scrollToMethods}>
+                        Methods
                       </Button>
                       <Button variant="ghost" onClick={scrollToExperience}>
-                        Experience
+                        Results
                       </Button>
                       <Button variant="ghost" onClick={scrollToProjects}>
-                        Projects
+                        Implications
                       </Button>
                       <Button variant="ghost" onClick={scrollToContact}>
                         Contact

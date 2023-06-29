@@ -149,7 +149,7 @@ export default function Methods({ color }) {
 
   return (
     <>
-      <Container maxW={"8xl"} id="experience">
+      <Container maxW={"8xl"} id="methods">
         <Stack
           as={Box}
           textAlign={"left"}

@@ -7,6 +7,7 @@ import Methods from './components/Methods';
 import Results from './components/Results';
 import Implications from './components/Implications';
 import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 function App() {
   // Available Colours:
@@ -23,6 +24,7 @@ function App() {
       <Methods color={color} />
       <Results color={color} />
       <Implications color={color} />
+      <Contact color={color} />
       <Footer />
     </>
   );

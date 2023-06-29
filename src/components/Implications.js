@@ -60,7 +60,7 @@ const Card = ({ heading, description, icon, href }) => {
 export default function Implications({ color }) {
   return (
     <>
-      <Container maxW={"8xl"} id="about">
+      <Container maxW={"8xl"} id="projects">
         <Stack
           as={Box}
           textAlign={"left"}
