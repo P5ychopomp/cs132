@@ -1,0 +1,5 @@
+Data Collection
+Preprocessing
+Exploration
+Stat Modelling
+Data Modelling
