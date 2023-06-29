@@ -11,13 +11,15 @@ import {
   useColorModeValue,
   UnorderedList,
   ListItem,
+  Button,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import ExperienceArray from "./ExperienceArray";
 import TagsArray from "./TagsArray";
 import { FcInfo, FcLineChart, FcQuestions } from "react-icons/fc";
+import { Link } from "react-router-dom/dist";
 
-const Card = ({ heading, description, sub, icon, href, color }) => {
+const Card = ({ heading, description, sub, icon, href, color, methods }) => {
   return (
     <Box
       maxW={{ base: "full", xl: "400px" }}
@@ -44,7 +46,7 @@ const Card = ({ heading, description, sub, icon, href, color }) => {
           <Heading size="md" pb={4} textAlign="center">
             {heading}
           </Heading>
-          <Divider borderColor={color}/>
+          <Divider borderColor={color} />
           <Container pt={5} px="0" mx="2">
             <UnorderedList textAlign="left">
               {description?.map((desc) => (
@@ -58,6 +60,16 @@ const Card = ({ heading, description, sub, icon, href, color }) => {
                 </UnorderedList>
               )}
             </UnorderedList>
+          </Container>
+          <Container centerContent w="full" mt={6}>
+            {
+              
+              <Link to={href}>
+                <Button mx="auto" colorScheme={color.split(".")[0]}>
+                  {methods}
+                </Button>
+              </Link>
+            }
           </Container>
         </Box>
       </Stack>
@@ -74,8 +86,8 @@ export default function Experience({ color }) {
     heading: [
       ["Data Collection", useColorModeValue("red.500", "red.300")],
       ["Preprocessing", useColorModeValue("blue.500", "blue.300")],
-      ["Exploration",  useColorModeValue("yellow.500", "yellow.300")],
-      ["Stat Modelling",  useColorModeValue("green.500", "green.300")],
+      ["Exploration", useColorModeValue("yellow.500", "yellow.300")],
+      ["Stat Modelling", useColorModeValue("green.500", "green.300")],
       ["Data Modelling", useColorModeValue("gray.700", "gray.300")],
     ],
     description: {
@@ -83,12 +95,12 @@ export default function Experience({ color }) {
         "Scraping 153 tweets using Snscrape library in Python.",
         "Keywords used:",
       ],
-      "Preprocessing": [
+      Preprocessing: [
         "Columns with missing values are removed",
         "Outliers are preserved",
         "New dataframe is constructed containing the Month and Year (Month) and the frequency of tweets per month (Tweet Count).",
       ],
-      "Exploration": [
+      Exploration: [
         "Binned by months to identify trends.",
         "Used scatter plot, bar plot and line plot for visualization",
       ],
@@ -105,10 +117,24 @@ export default function Experience({ color }) {
         '"npa makabayan"',
         "npa (neri OR elago OR raoul)",
       ],
-      
     },
     icon: [],
-    href: [],
+    href: {
+      "Data Collection":
+        "https://drive.google.com/drive/u/0/folders/1y9-2tsFHxdCwo-TCHN1tXe_amSk7tGu8",
+      Preprocessing:
+        "https://drive.google.com/drive/u/0/folders/1y9-2tsFHxdCwo-TCHN1tXe_amSk7tGu8",
+      Exploration: "https://p5ychopomp.github.io/authentica/exploration.html",
+      "Stat Modelling": "#",
+      "Data Modelling": "https://authentica.w3spaces.com/index.html",
+    },
+    methods: {
+      "Data Collection": "See the data!",
+      Preprocessing: "See the (new) data!",
+      Exploration: "See our exploration!",
+      "Stat Modelling": "See the stat model!",
+      "Data Modelling": "See the data model!",
+    },
   };
 
   useEffect(() => {
@@ -161,7 +187,8 @@ export default function Experience({ color }) {
                       description={CardElements.description[head[0]]}
                       sub={CardElements.sub[head[0]]}
                       color={head[1]}
-                      href={"#"}
+                      href={CardElements.href[head[0]]}
+                      methods={CardElements.methods[head[0]]}
                     />
                   ))}
                 </Stack>
