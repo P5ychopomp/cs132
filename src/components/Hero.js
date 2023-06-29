@@ -8,6 +8,7 @@ import {
   Icon,
   useColorModeValue,
   createIcon,
+  Image,
 } from "@chakra-ui/react";
 import ProfileArray from "./ProfileArray";
 
@@ -18,11 +19,7 @@ export default function Header({ color }) {
     contactSection.scrollIntoView({ behavior: "smooth" });
   };
   const linkedin = () => {
-    window.open(
-                `${profile.linkedin}`,
-                "_blank",
-                "noreferrer,noopener"
-              );
+    window.open(`${profile.linkedin}`, "_blank", "noreferrer,noopener");
   };
   return (
     <>
@@ -37,6 +34,7 @@ export default function Header({ color }) {
         <Stack
           as={Box}
           textAlign={"center"}
+          alignItems={"center"}
           spacing={{ base: 8, md: 14 }}
           pb={{ base: 20, md: 36 }}
           pt={{ base: 36, md: 52 }}
@@ -44,20 +42,29 @@ export default function Header({ color }) {
           <Heading
             fontWeight={600}
             fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-            lineHeight={"110%"}
+            lineHeight={"100%"}
+            color={useColorModeValue("gray.800", "gray.400")}
           >
-            {profile.headerName} <br />
-            <Text as={"span"} color={`${color}.400`}>
-              {profile.headerRole}
-            </Text>
+            {profile.headerName}
+            <Box width={{ base: "sm", sm: "lg", md: "2xl" }} objectFit="cover">
+              <Image
+                objectFit="cover"
+                src={useColorModeValue("logo-light.png", "logo-dark.png")}
+              />
+            </Box>
           </Heading>
+
           <Text
-            color={"gray.500"}
+            color={useColorModeValue("gray.800", "gray.400")}
             fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
           >
-            {profile.headerDesc}
+            This is our project,{" "}
+            <span style={{ fontWeight: "bold" }}>Makabayan Under Attack!</span>{" "}
+            This project aims to provide insights regarding the red-tagging of
+            the Makabayan bloc by doing a time series analysis of
+            mis/disinformation tweets.
           </Text>
-          <Stack
+          {/* <Stack
             direction={"column"}
             spacing={3}
             align={"center"}
@@ -75,14 +82,6 @@ export default function Header({ color }) {
               onClick={linkedin}
             >
               Let's connect!
-            </Button>
-            <Button
-              variant={"link"}
-              colorScheme={"blue"}
-              size={"sm"}
-              onClick={scrollToContact}
-            >
-              Contact Me
             </Button>
             <Box>
               <Icon
@@ -104,7 +103,7 @@ export default function Header({ color }) {
                 Click me!
               </Text>
             </Box>
-          </Stack>
+          </Stack> */}
         </Stack>
       </Container>
     </>

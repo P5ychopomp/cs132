@@ -1,3 +1,5 @@
-Category 1
-Category 2
-Category 3
+Data Collection
+Preprocessing
+Exploration
+Stat Modelling
+Data Modelling

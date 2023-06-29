@@ -35,7 +35,7 @@ export default function Projects({ color }) {
     
   return (
     <>
-      <Container maxW={"3xl"} id="projects">
+      <Container maxW={"8xl"} id="projects">
         <Stack
           as={Box}
           textAlign={"center"}
